@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 data-e2e="sw-title" class="row Global __tc __margin-top-lager">Intergalactic Star Wars Database</h2>
+  <h6 class="row Global __tc">(persons only)</h6>
+  <div class="row Global __bc __extra-p">
+      <div class="input-field col s6">
+        <input id="search" type="text" [(ngModel)]="searchInput" (ngModelChange)="search($event)"/>
+        <label for="search" [ngClass]="{'active': searchInput}">Search</label>
+      </div>
+  </div>
+  
+  <div class="row Global __tc" *ngIf="results$ | async as people; else loading">  
+    <p *ngIf="!people?.results.length && !people?.hasError">No results :(</p>
+    <div class="Global __bc" *ngIf="people.hasError"> 
+      <p class="red darken-4 error-alert">
+          An unexpected error has happened, please try again later.
+      </p>
+    </div>
+    <p class="__person" *ngFor="let person of people.results">
+      {{person.name}}
+    </p>
+  </div>
+
+    <ng-template #loading>
+      <p class="row Global __tc">Loading universe....</p>
+    </ng-template>
+</div>

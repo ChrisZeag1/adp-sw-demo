@@ -1,0 +1,22 @@
+@import '../styles/variables.scss';
+
+.row {
+
+  &.__extra-p {
+    padding: 45px 0 20px;
+  }
+
+}
+
+.error-alert {
+  padding: 10px;
+}
+
+p {
+  &.__person {
+    border: 1px dashed white;
+    display: inline-block;
+    padding: 20px;
+    margin: 5px;
+  }
+}

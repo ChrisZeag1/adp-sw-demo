@@ -1,0 +1,19 @@
+.Global {
+
+  &.__tc {
+    text-align: center;
+  }
+
+  &.__margin-top-lager {
+    margin-top: 100px;
+  }
+
+  &.__bc {
+    display: flex;
+
+    * {
+      margin: auto;  
+    }
+
+  }
+}
